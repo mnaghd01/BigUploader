@@ -7,20 +7,69 @@
 //
 
 import UIKit
-hey
+import MobileCoreServices
+
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var uploadButton: UIButton!
+    @IBOutlet weak var progressBar: UIProgressView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func uploadButoonWasPressed(_ sender: UIButton) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.mediaTypes = [kUTTypePDF as String, kUTTypeImage as String]
+        imagePicker.delegate = self
+        presentedViewController(imagePicker, animated: true, completion: nil)
+        
     }
-
+    
+    func uploadImageToFirebaseStorage(data: NSData){
+        
+    }
+    
+    func uploadPDFToFirebaseStorage(url: NSURL) {
+        
+    }
+    
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+        func imagePickerControllerDidCancel(picker: UIImagePickerController){
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]){
+        guard let mediaType: String = info[UIImagePickerControllerMediaType] as? String else {
+            dismissViewControllerAnimated(true, completion: nil)
+            return
+        }
+    }
+    
+    if mediaType == (kUTTypeImage as String){
+        if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage, uploadImageToFirebaseStorage9imagedata)
+    } else if {
+    mediaType ==(kUTTypePDF as String){
+    if letPDFURL = info[UIImagePickerControllerMediaURL] as? NSURL{
+    uploadPDFToFirebaseStrorage(PDFURL)
+    }
+    
+    }
+    
+    
+    
+    
+    
+    }
+    
+    
+    
+    
+    
+    }
 
 }
 
