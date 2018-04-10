@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         imagePicker.sourceType = .photoLibrary
         imagePicker.mediaTypes = [kUTTypePDF as String, kUTTypeImage as String]
         imagePicker.delegate = self
-        presentedViewController(imagePicker, animated: true, completion: nil)
+        presentViewController(imagePicker, animated: true, completion: nil)
         
     }
     
