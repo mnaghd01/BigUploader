@@ -11,7 +11,7 @@ import MobileCoreServices
 
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var uploadButton: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
     
@@ -19,13 +19,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    @IBAction func uploadButoonWasPressed(_ sender: UIButton) {
+    
+    @IBAction func uploadButtonWasPressed(_ sender: UIButton) {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
         imagePicker.mediaTypes = [kUTTypePDF as String, kUTTypeImage as String]
         imagePicker.delegate = self
-        presentViewController(imagePicker, animated: true, completion: nil)
+        present(imagePicker, animated: true, completion: nil)
         
     }
     
@@ -36,40 +36,36 @@ class ViewController: UIViewController {
     func uploadPDFToFirebaseStorage(url: NSURL) {
         
     }
-    
+}
+
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-        func imagePickerControllerDidCancel(picker: UIImagePickerController){
-            dismissViewControllerAnimated(true, completion: nil)
-        }
-        
+    func imagePickerControllerDidCancel(picker: UIImagePickerController){
+        dismiss(animated: true, completion: nil)
+    }
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]){
         guard let mediaType: String = info[UIImagePickerControllerMediaType] as? String else {
-            dismissViewControllerAnimated(true, completion: nil)
+            dismiss(animated: true, completion: nil)
             return
         }
+        
+        if mediaType == (kUTTypeImage as String){
+            if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage, let imageData = UIImageJPEGRepresentation(originalImage, 0.8) {
+                uploadImageToFirebaseStorage(data: imageData)
+            }
+        } else if mediaType == (kUTTypePDF as String){
+            if let pdfURL = info[UIImagePickerControllerMediaURL] as? NSURL{
+                uploadPDFToFirebaseStorage(url: pdfURL)
+            }
+            
+        }
+        
+        
+        
+        
+        
     }
     
-    if mediaType == (kUTTypeImage as String){
-        if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage, uploadImageToFirebaseStorage9imagedata)
-    } else if {
-    mediaType ==(kUTTypePDF as String){
-    if letPDFURL = info[UIImagePickerControllerMediaURL] as? NSURL{
-    uploadPDFToFirebaseStrorage(PDFURL)
-    }
     
-    }
-    
-    
-    
-    
-    
-    }
-    
-    
-    
-    
-    
-    }
-
 }
 
