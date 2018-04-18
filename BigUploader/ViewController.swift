@@ -29,11 +29,11 @@ class ViewController: UIViewController {
         
     }
     
-    func uploadImageToFirebaseStorage(data: NSData){
+    func uploadImageToFirebaseStorage(data: Data){
         
     }
     
-    func uploadPDFToFirebaseStorage(url: NSURL) {
+    func uploadPDFToFirebaseStorage(url: URL) {
         
     }
 }
@@ -55,7 +55,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             }
         } else if mediaType == (kUTTypePDF as String){
             if let pdfURL = info[UIImagePickerControllerMediaURL] as? NSURL{
-                uploadPDFToFirebaseStorage(url: pdfURL)
+                uploadPDFToFirebaseStorage(url: pdfURL as URL)
             }
             
         }
