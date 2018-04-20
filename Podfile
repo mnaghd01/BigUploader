@@ -8,5 +8,7 @@ target 'BigUploader' do
   # Pods for BigUploader
 
 	pod 'Firebase/Core'
+	pod 'Firebase/Storage'
+
 
 end
