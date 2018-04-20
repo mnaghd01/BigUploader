@@ -61,7 +61,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         }
         
         
-        
+        dismiss(animated: true, completion: nil)
         
         
     }
