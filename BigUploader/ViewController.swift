@@ -8,6 +8,7 @@
 
 import UIKit
 import MobileCoreServices
+import Firebase
 
 
 class ViewController: UIViewController {
@@ -30,7 +31,9 @@ class ViewController: UIViewController {
     }
     
     func uploadImageToFirebaseStorage(data: Data){
-        //Fix me
+        let storageRef = Storage.storage().reference(withPath: "CapsulateReturn/Amazon")
+        let uploadMetadata = StorageMetadata()
+        uploadMetadata.contentType = "image/jpeg"
     }
     
     func uploadPDFToFirebaseStorage(url: URL) {
