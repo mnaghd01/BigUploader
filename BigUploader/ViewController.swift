@@ -11,11 +11,11 @@ import MobileCoreServices
 import Firebase
 
 
-class ViewController:UIViewController, UIImagePickerControllerDelegate,
-UINavigationControllerDelegate {
+class ViewController:UIViewController {
     
     @IBOutlet weak var uploadButton: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
+
     
     
     override func viewDidLoad() {
@@ -25,7 +25,7 @@ UINavigationControllerDelegate {
     @IBAction func uploadButtonWasPressed(_ sender: UIButton) {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
-        imagePicker.mediaTypes = [kUTTypePDF as String, kUTTypeImage as String]
+        imagePicker.mediaTypes = [kUTTypeImage as String, kUTTypePDF as String]
         imagePicker.delegate = self
         present(imagePicker, animated: true, completion: nil)
         
@@ -55,12 +55,19 @@ UINavigationControllerDelegate {
     }
 }
 
+
+
+
+
+
+
+
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
         dismiss(animated: true, completion: nil)
     }
     
-    private func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]){
+    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]){
         guard let mediaType: String = info[UIImagePickerControllerMediaType] as? String else {
             dismiss(animated: true, completion: nil)
             return
@@ -82,6 +89,10 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         
         
     }
+    
+    
+    
+    
     
     
 }

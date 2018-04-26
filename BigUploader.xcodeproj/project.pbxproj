@@ -27,6 +27,7 @@
 		91A418B02071788F00374FDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91A418B32071788F00374FDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91A418B52071788F00374FDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91FFB38120926F8100F38043 /* BigUploader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BigUploader.entitlements; sourceTree = "<group>"; };
 		968C3E000FD1C489D3B85714 /* Pods-BigUploader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BigUploader.release.xcconfig"; path = "Pods/Target Support Files/Pods-BigUploader/Pods-BigUploader.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +73,7 @@
 		91A418A82071788E00374FDF /* BigUploader */ = {
 			isa = PBXGroup;
 			children = (
+				91FFB38120926F8100F38043 /* BigUploader.entitlements */,
 				91A418A92071788E00374FDF /* AppDelegate.swift */,
 				91A418AB2071788E00374FDF /* ViewController.swift */,
 				91A418AD2071788E00374FDF /* Main.storyboard */,
@@ -126,6 +128,11 @@
 				TargetAttributes = {
 					91A418A52071788E00374FDF = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -370,10 +377,14 @@
 			baseConfigurationReference = 4D3DD5FBF5CC4B55692CE779 /* Pods-BigUploader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BigUploader/BigUploader.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2V47CWYPC7;
 				INFOPLIST_FILE = BigUploader/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.capsulate.BigUploader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -386,10 +397,14 @@
 			baseConfigurationReference = 968C3E000FD1C489D3B85714 /* Pods-BigUploader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BigUploader/BigUploader.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2V47CWYPC7;
 				INFOPLIST_FILE = BigUploader/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.capsulate.BigUploader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
