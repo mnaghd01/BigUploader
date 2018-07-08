@@ -4,18 +4,17 @@
 //
 //  Created by Mehdi on 4/1/18.
 //  Copyright © 2018 Mehdi. All rights reserved.
-//
 
 import UIKit
 import MobileCoreServices
 import Firebase
 
-
 class ViewController:UIViewController {
     
     @IBOutlet weak var uploadButton: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
-
+    @IBOutlet weak var messageLabel: UILabel!
+    
     
     
     override func viewDidLoad() {
@@ -23,6 +22,7 @@ class ViewController:UIViewController {
     }
     
     @IBAction func uploadButtonWasPressed(_ sender: UIButton) {
+        messageLabel.text = ""
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
         imagePicker.mediaTypes = [kUTTypeImage as String, kUTTypePDF as String]
@@ -37,8 +37,10 @@ class ViewController:UIViewController {
         uploadMetadata.contentType = "image/jpeg"
         let uploadTask = storageRef.putData(data as Data, metadata: uploadMetadata) { (metadata, error) in
             if(error != nil){
+                self.messageLabel.text = "There seems to be a problem"
                 print("I have received an error\(String(describing: error?.localizedDescription))")
             } else {
+                self.messageLabel.text = "Upload Completed!"
                 print("Upload Completed! Please take a look at these metadata!\(String(describing: metadata))")
             }
         }

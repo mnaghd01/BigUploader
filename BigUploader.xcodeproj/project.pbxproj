@@ -13,6 +13,7 @@
 		91A418AF2071788E00374FDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91A418AD2071788E00374FDF /* Main.storyboard */; };
 		91A418B12071788F00374FDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91A418B02071788F00374FDF /* Assets.xcassets */; };
 		91A418B42071788F00374FDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91A418B22071788F00374FDF /* LaunchScreen.storyboard */; };
+		91D6815F20F28BA30058BDD9 /* AuthorizationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D6815E20F28BA30058BDD9 /* AuthorizationProvider.swift */; };
 		D553D17D6960EA3417D095AC /* Pods_BigUploader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FBCE6FC328FE4D4E99809E /* Pods_BigUploader.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		91A418B02071788F00374FDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91A418B32071788F00374FDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91A418B52071788F00374FDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91D6815E20F28BA30058BDD9 /* AuthorizationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationProvider.swift; sourceTree = "<group>"; };
 		91FFB38120926F8100F38043 /* BigUploader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BigUploader.entitlements; sourceTree = "<group>"; };
 		968C3E000FD1C489D3B85714 /* Pods-BigUploader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BigUploader.release.xcconfig"; path = "Pods/Target Support Files/Pods-BigUploader/Pods-BigUploader.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +83,7 @@
 				91A418B22071788F00374FDF /* LaunchScreen.storyboard */,
 				91A418B52071788F00374FDF /* Info.plist */,
 				91824E99208A870F005759E7 /* GoogleService-Info.plist */,
+				91D6815E20F28BA30058BDD9 /* AuthorizationProvider.swift */,
 			);
 			path = BigUploader;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91D6815F20F28BA30058BDD9 /* AuthorizationProvider.swift in Sources */,
 				91A418AC2071788E00374FDF /* ViewController.swift in Sources */,
 				91A418AA2071788E00374FDF /* AppDelegate.swift in Sources */,
 			);

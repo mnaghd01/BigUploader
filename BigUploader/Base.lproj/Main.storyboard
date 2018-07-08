@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -30,27 +30,39 @@
                                     <action selector="uploadButtonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gZG-nS-u6V"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6d-ng-M2G">
+                                <rect key="frame" x="71" y="393" width="232" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZHm-Ey-6th" secondAttribute="trailing" constant="161" id="6bR-b3-W7c"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MDq-fl-L2i" secondAttribute="bottom" constant="377" id="9HI-7j-GZo"/>
                             <constraint firstItem="MDq-fl-L2i" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="268" id="HrJ-UD-YUe"/>
+                            <constraint firstItem="R6d-ng-M2G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="71" id="IDr-Mp-zTn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R6d-ng-M2G" secondAttribute="trailing" constant="72" id="PoD-s3-P9r"/>
                             <constraint firstItem="ZHm-Ey-6th" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="181" id="Uc0-Sg-AvO"/>
+                            <constraint firstItem="R6d-ng-M2G" firstAttribute="top" secondItem="MDq-fl-L2i" secondAttribute="bottom" constant="103" id="cEQ-G1-yIE"/>
                             <constraint firstItem="ZHm-Ey-6th" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="160" id="e3B-Qb-NCi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MDq-fl-L2i" secondAttribute="trailing" constant="97" id="jww-hS-Wbz"/>
                             <constraint firstItem="MDq-fl-L2i" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="96" id="lx7-lI-ror"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="R6d-ng-M2G" secondAttribute="bottom" constant="253" id="oAJ-FK-pWj"/>
                             <constraint firstItem="MDq-fl-L2i" firstAttribute="top" secondItem="ZHm-Ey-6th" secondAttribute="bottom" constant="57" id="pyk-sT-cwX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="messageLabel" destination="R6d-ng-M2G" id="ojB-qK-zo4"/>
                         <outlet property="progressBar" destination="MDq-fl-L2i" id="oLb-AC-DJV"/>
                         <outlet property="uploadButton" destination="ZHm-Ey-6th" id="h88-9E-kiz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="116" y="111.99400299850076"/>
         </scene>
     </scenes>
 </document>
