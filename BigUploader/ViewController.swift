@@ -14,6 +14,14 @@ class ViewController:UIViewController {
     @IBOutlet weak var uploadButton: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var messageLabel: UILabel!
+    let userID = Auth.auth().currentUser?.uid
+    let importDate = SmallFunctions()
+    var storageRef: StorageReference{
+        return Storage.storage().reference().child(userID!).child("CapsulateReturn").child("AmazonReturnLabel")
+    }
+    var documenteRef: DocumentReference! {
+        return Firestore.firestore().document("Users/\(userID!)/AmazonReturnLabels/\(importDate.giveDate())")
+    }
     
     
     
@@ -32,7 +40,6 @@ class ViewController:UIViewController {
     }
     
     func uploadImageToFirebaseStorage(data: Data){
-        let storageRef = Storage.storage().reference(withPath: "CapsulateReturn/AmazonReturnLabel")
         let uploadMetadata = StorageMetadata()
         uploadMetadata.contentType = "image/jpeg"
         let uploadTask = storageRef.putData(data as Data, metadata: uploadMetadata) { (metadata, error) in
@@ -42,6 +49,11 @@ class ViewController:UIViewController {
             } else {
                 self.messageLabel.text = "Upload Completed!"
                 print("Upload Completed! Please take a look at these metadata!\(String(describing: metadata))")
+                print(metadata?.downloadURL()! ?? "Nothing")
+                let dataToSave : [String: String] = ["date": (metadata?.downloadURL()?.absoluteString)!]
+                print("This is it I guess: \(dataToSave)")
+                self.documenteRef.setData(dataToSave)
+                
             }
         }
         //Update the progress bar as the image gets updated
@@ -52,16 +64,11 @@ class ViewController:UIViewController {
         }
     }
     
-    func uploadPDFToFirebaseStorage(url: URL) {
+    func uploadPDFToFirebaseStorage(url: NSURL) {
         //Fix me
+        
     }
 }
-
-
-
-
-
-
 
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
@@ -80,8 +87,8 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
                 uploadImageToFirebaseStorage(data: imageData)
             }
         } else if mediaType == (kUTTypePDF as String){
-            if let pdfURL = info[UIImagePickerControllerMediaURL] as? URL{
-                uploadPDFToFirebaseStorage(url: pdfURL as URL)
+            if let pdfURL = info[UIImagePickerControllerMediaURL] as? NSURL{
+                uploadPDFToFirebaseStorage(url: pdfURL as NSURL)
             }
             
         }
@@ -89,13 +96,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         
         dismiss(animated: true, completion: nil)
         
-        
+    
     }
     
-    
-    
-    
-    
-    
 }
-

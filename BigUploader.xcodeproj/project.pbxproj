@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		912A829420F2A67C00F74D3C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912A829320F2A67C00F74D3C /* LoginViewController.swift */; };
+		91371DB720FEA65800E35AFA /* SmallFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91371DB620FEA65800E35AFA /* SmallFunctions.swift */; };
+		91761E8420FAF2C800519739 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91761E8320FAF2C800519739 /* RegisterViewController.swift */; };
 		91824E9A208A870F005759E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91824E99208A870F005759E7 /* GoogleService-Info.plist */; };
 		91A418AA2071788E00374FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A418A92071788E00374FDF /* AppDelegate.swift */; };
 		91A418AC2071788E00374FDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A418AB2071788E00374FDF /* ViewController.swift */; };
@@ -20,6 +23,9 @@
 /* Begin PBXFileReference section */
 		49FBCE6FC328FE4D4E99809E /* Pods_BigUploader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BigUploader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D3DD5FBF5CC4B55692CE779 /* Pods-BigUploader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BigUploader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BigUploader/Pods-BigUploader.debug.xcconfig"; sourceTree = "<group>"; };
+		912A829320F2A67C00F74D3C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		91371DB620FEA65800E35AFA /* SmallFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallFunctions.swift; sourceTree = "<group>"; };
+		91761E8320FAF2C800519739 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		91824E99208A870F005759E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		91A418A62071788E00374FDF /* BigUploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigUploader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91A418A92071788E00374FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +90,9 @@
 				91A418B52071788F00374FDF /* Info.plist */,
 				91824E99208A870F005759E7 /* GoogleService-Info.plist */,
 				91D6815E20F28BA30058BDD9 /* AuthorizationProvider.swift */,
+				912A829320F2A67C00F74D3C /* LoginViewController.swift */,
+				91371DB620FEA65800E35AFA /* SmallFunctions.swift */,
+				91761E8320FAF2C800519739 /* RegisterViewController.swift */,
 			);
 			path = BigUploader;
 			sourceTree = "<group>";
@@ -197,14 +206,28 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BigUploader/Pods-BigUploader-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,9 +257,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				912A829420F2A67C00F74D3C /* LoginViewController.swift in Sources */,
+				91761E8420FAF2C800519739 /* RegisterViewController.swift in Sources */,
 				91D6815F20F28BA30058BDD9 /* AuthorizationProvider.swift in Sources */,
 				91A418AC2071788E00374FDF /* ViewController.swift in Sources */,
 				91A418AA2071788E00374FDF /* AppDelegate.swift in Sources */,
+				91371DB720FEA65800E35AFA /* SmallFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
